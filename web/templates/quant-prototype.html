@@ -802,12 +802,9 @@
         <button class="nav-item" data-target="history-backtest"><i data-lucide="history"></i><span>历史回测</span></button>
         <button class="nav-item" data-target="code-strategy"><i data-lucide="code-2"></i><span>代码策略</span><span class="nav-count">IDE</span></button>
         <button class="nav-item" data-target="watchlist"><i data-lucide="star"></i><span>我的自选</span><span class="nav-count" id="watchCount">6</span></button>
-        <button class="nav-item" data-target="automation"><i data-lucide="bot"></i><span>自动交易</span></button>
-        <button class="nav-item" data-target="review"><i data-lucide="clipboard-list"></i><span>复盘中心</span></button>
       </nav>
       <div class="nav-label">管理</div>
       <nav class="nav-list">
-        <button class="nav-item" data-target="settings"><i data-lucide="sliders-horizontal"></i><span>买入/卖出条件设置</span><i class="settings-chevron" data-lucide="chevron-down"></i></button>
         <div class="settings-subnav" id="settingsSubnav">
           <button class="active" data-settings-section="buy"><i data-lucide="arrow-down-to-line"></i>买入条件</button>
           <button data-settings-section="sell"><i data-lucide="arrow-up-from-line"></i>卖出条件</button>
@@ -863,9 +860,6 @@
 
         <section id="code-strategy" class="panel code-strategy-panel"><div class="panel-header"><div><div class="panel-title">代码筛选</div><div class="panel-subtitle">编写筛选代码并查看查询结果，结果可直接加入自选分组</div></div><div class="code-menu-status"><span class="status-dot"></span>QuantPilot DSL · 编辑模式</div></div><div class="code-strategy-body"><div id="codeStrategyMount"></div><div id="codeResultMount"></div><div id="codeStrategyPoolMount"></div></div></section>
 
-        <section id="settings" class="page-heading settings-heading">
-          <div><h1>买入/卖出条件设置</h1><p class="heading-note">配置自动交易的买入规则与卖出规则</p></div>
-        </section>
 
         <section id="condition-strategy" class="panel condition-strategy-panel">
           <div class="panel-header">
@@ -1060,102 +1054,7 @@
 
         <section id="watchlist" class="panel watch-panel"><div class="panel-header"><div><div class="panel-title">自选股与信号</div><div class="panel-subtitle">实时跟踪关注标的的价格、策略信号与预期收益</div></div><div class="filter-tools"><div class="table-tabs" id="groupTabs"><button class="table-tab active" data-table="all">全部标的</button><button class="table-tab" data-table="favorite">我的自选</button><button class="table-tab" id="strategyResultTab" data-table="strategy">策略命中</button><button class="table-tab" data-table="group:核心关注">核心关注</button><button class="table-tab" data-table="group:短线策略">短线策略</button><button class="table-tab" data-table="group:待观察">待观察</button><button class="new-group-btn" id="newGroupBtn"><i data-lucide="plus"></i>新建分组</button></div><button class="primary-btn" id="addStockBtn"><i data-lucide="plus"></i>添加股票</button></div></div><div class="table-wrap"><table><thead><tr><th>股票</th><th>最新价</th><th>涨跌幅</th><th>策略信号</th><th>信号强度</th><th>历史胜率</th><th>预期收益</th><th>分组</th><th>操作</th></tr></thead><tbody id="stockTable"><tr data-favorite="true" data-group="核心关注" data-strategy="趋势加速反转" data-search="宁德时代 300750"><td><div class="stock-cell"><button class="stock-star active" title="取消自选"><i data-lucide="star"></i></button><div><div class="stock-name">宁德时代</div><div class="stock-code">300750 · 电池</div><span class="stock-group">核心关注</span></div></div></td><td class="price">268.40</td><td class="up">+3.16%</td><td><span class="tag green">趋势加速反转</span></td><td><span class="up">强 · 92</span></td><td>74.2%</td><td class="up">+12.6%</td><td><select class="row-group" aria-label="宁德时代分组"><option selected>核心关注</option><option>短线策略</option><option>待观察</option></select></td><td><button class="icon-btn row-detail" title="查看详情"><i data-lucide="arrow-up-right"></i></button></td></tr><tr data-favorite="true" data-group="短线策略" data-strategy="涨停回踩" data-search="中际旭创 300308"><td><div class="stock-cell"><button class="stock-star active" title="取消自选"><i data-lucide="star"></i></button><div><div class="stock-name">中际旭创</div><div class="stock-code">300308 · 通信设备</div><span class="stock-group">短线策略</span></div></div></td><td class="price">142.88</td><td class="up">+2.48%</td><td><span class="tag orange">涨停回踩</span></td><td><span class="up">强 · 86</span></td><td>68.5%</td><td class="up">+9.3%</td><td><select class="row-group" aria-label="中际旭创分组"><option>核心关注</option><option selected>短线策略</option><option>待观察</option></select></td><td><button class="icon-btn row-detail" title="查看详情"><i data-lucide="arrow-up-right"></i></button></td></tr><tr data-favorite="false" data-group="核心关注" data-strategy="多周期共振" data-search="贵州茅台 600519"><td><div class="stock-cell"><button class="stock-star" title="加入自选"><i data-lucide="star"></i></button><div><div class="stock-name">贵州茅台</div><div class="stock-code">600519 · 白酒</div><span class="stock-group">核心关注</span></div></div></td><td class="price">1,482.00</td><td class="down">-0.42%</td><td><span class="tag blue">多周期共振</span></td><td><span class="up">中 · 78</span></td><td>63.7%</td><td class="up">+6.8%</td><td><select class="row-group" aria-label="贵州茅台分组"><option selected>核心关注</option><option>短线策略</option><option>待观察</option></select></td><td><button class="icon-btn row-detail" title="查看详情"><i data-lucide="arrow-up-right"></i></button></td></tr><tr data-favorite="true" data-group="核心关注" data-strategy="放量突破" data-search="工业富联 601138"><td><div class="stock-cell"><button class="stock-star active" title="取消自选"><i data-lucide="star"></i></button><div><div class="stock-name">工业富联</div><div class="stock-code">601138 · 消费电子</div><span class="stock-group">核心关注</span></div></div></td><td class="price">24.73</td><td class="up">+1.98%</td><td><span class="tag green">放量突破</span></td><td><span class="up">中 · 75</span></td><td>70.1%</td><td class="up">+8.1%</td><td><select class="row-group" aria-label="工业富联分组"><option selected>核心关注</option><option>短线策略</option><option>待观察</option></select></td><td><button class="icon-btn row-detail" title="查看详情"><i data-lucide="arrow-up-right"></i></button></td></tr><tr data-favorite="true" data-group="待观察" data-strategy="回踩支撑" data-search="药明康德 603259"><td><div class="stock-cell"><button class="stock-star active" title="取消自选"><i data-lucide="star"></i></button><div><div class="stock-name">药明康德</div><div class="stock-code">603259 · 医疗服务</div><span class="stock-group">待观察</span></div></div></td><td class="price">45.31</td><td class="up">+1.27%</td><td><span class="tag gray">回踩支撑</span></td><td><span class="up">中 · 71</span></td><td>65.4%</td><td class="up">+5.4%</td><td><select class="row-group" aria-label="药明康德分组"><option>核心关注</option><option>短线策略</option><option selected>待观察</option></select></td><td><button class="icon-btn row-detail" title="查看详情"><i data-lucide="arrow-up-right"></i></button></td></tr><tr data-favorite="false" data-group="待观察" data-strategy="观察中" data-search="阳光电源 300274"><td><div class="stock-cell"><button class="stock-star" title="加入自选"><i data-lucide="star"></i></button><div><div class="stock-name">阳光电源</div><div class="stock-code">300274 · 光伏设备</div><span class="stock-group">待观察</span></div></div></td><td class="price">91.62</td><td class="down">-1.04%</td><td><span class="tag gray">观察中</span></td><td><span>弱 · 54</span></td><td>58.6%</td><td>--</td><td><select class="row-group" aria-label="阳光电源分组"><option>核心关注</option><option>短线策略</option><option selected>待观察</option></select></td><td><button class="icon-btn row-detail" title="查看详情"><i data-lucide="arrow-up-right"></i></button></td></tr></tbody></table></div><div class="table-note"><span id="tableResult">显示 6 / 6 只股票 · 数据每 5 秒自动刷新</span><button id="viewAllBtn">查看完整列表 <i data-lucide="arrow-right"></i></button></div></section>
 
-        <section id="automation" class="panel auto-panel">
-          <div class="panel-header">
-            <div><div class="panel-title">自动交易记录</div><div class="panel-subtitle">查看候选进入次日判断后产生的真实信号、成交和风控拦截记录</div></div>
-            <div style="display:flex;gap:8px"><button class="ghost-btn" id="refreshAutomation"><i data-lucide="refresh-cw"></i>刷新记录</button><button class="ghost-btn" id="riskBtn"><i data-lucide="sliders-horizontal"></i>买入/卖出条件</button></div>
-          </div>
-          <div class="panel-body">
-            <div class="automation-summary">
-              <div class="automation-summary-item"><label>执行模式</label><strong id="automationMode">--</strong><small>当前不会提交真实券商订单</small></div>
-              <div class="automation-summary-item"><label>监控状态</label><strong id="automationMonitoring">--</strong><small id="automationMonitoringNote">等待后端状态</small></div>
-              <div class="automation-summary-item"><label>今日成交</label><strong id="automationTradesToday">--</strong><small id="automationTradeDate">--</small></div>
-              <div class="automation-summary-item"><label>明日待判断</label><strong id="automationQueued">--</strong><small id="automationExecutionDate">--</small></div>
-              <div class="automation-summary-item"><label>当前持仓</label><strong id="automationPositions">--</strong><small id="automationPositionLimit">--</small></div>
-            </div>
 
-            <div id="externalEnvironmentStatus" class="external-env-strip" data-state="unknown"><span class="external-env-title">开仓风控</span><span id="externalEnvironmentDecision" class="external-env-decision">等待快照</span><span id="externalEnvironmentDetail" class="external-env-detail">外围市场数据尚未读取</span><button class="ghost-btn" id="refreshExternalEnvironment" title="重新读取外围环境"><i data-lucide="refresh-cw"></i>刷新</button></div>
-
-            <div class="automation-section">
-              <div class="automation-section-header">
-                <div><div class="automation-section-title">当前持仓估值</div><div class="automation-section-note" id="automationPositionNote">累计盈亏=卖出所得+余股估值−买入支出（与日报同口径）</div></div>
-              </div>
-              <div class="automation-table-wrap"><table class="automation-table automation-position-table"><thead><tr><th>股票</th><th>持仓数量</th><th>可卖数量</th><th>成本价</th><th>最新价</th><th>市值</th><th>累计盈亏</th></tr></thead><tbody id="automationPositionTable"><tr><td colspan="7" class="automation-empty">正在读取持仓估值</td></tr></tbody></table></div>
-            </div>
-
-            <div class="automation-section">
-              <div class="automation-section-header">
-                <div><div class="automation-section-title">成交记录</div><div class="automation-section-note" id="automationRecordNote">只展示后端保存的真实模拟成交，不显示示例数据</div></div>
-                <div class="automation-record-tools"><select id="automationRecordSide" aria-label="筛选买卖方向"><option value="all">全部方向</option><option value="buy">仅买入</option><option value="sell">仅卖出</option></select><input id="automationRecordSearch" placeholder="搜索股票名称或代码" aria-label="搜索自动交易记录"></div>
-              </div>
-              <div class="automation-table-wrap"><table class="automation-table trade-record-table"><thead><tr><th>成交时间</th><th>股票</th><th>方向</th><th>触发条件</th><th>数量</th><th>成交价</th><th>成交金额</th><th>费用</th><th>状态</th></tr></thead><tbody id="automationTradeTable"><tr><td colspan="9" class="automation-empty">正在读取自动交易记录</td></tr></tbody></table></div>
-            </div>
-
-            <div class="automation-section automation-side">
-              <div class="automation-subsection">
-                <div class="automation-section-header"><div><div class="automation-section-title">明日待执行候选</div><div class="automation-section-note" id="automationPlanNote">今日筛选后加入计划，下一交易日按买入条件判断</div></div><span class="tag gray" id="automationPlanCount">0 只</span></div>
-                <div class="automation-plan-source"><select id="automationStrategySelect" aria-label="候选来源策略"><option value="">暂无筛选策略</option></select><button class="ghost-btn" id="openCodeStrategy"><i data-lucide="scan-search"></i>查看筛选</button></div>
-                <div id="automationPlanList" class="automation-plan-list"><div class="automation-empty">暂无明日待执行候选</div></div>
-              </div>
-              <div class="automation-subsection">
-                <div class="automation-section-header"><div><div class="automation-section-title">当前交易规则</div><div class="automation-section-note">这里显示交易引擎实际使用的参数</div></div></div>
-                <div id="automationRuleList" class="automation-rule-list"><div class="automation-empty">正在读取交易规则</div></div>
-              </div>
-            </div>
-
-            <div class="automation-section">
-              <div class="automation-section-header"><div><div class="automation-section-title">条件判断记录</div><div class="automation-section-note">包括未成交信号和外围风控拦截（不含等待确认K线的持有判断）</div></div><span class="tag gray" id="automationSignalCount">0 条</span></div>
-              <div id="automationSignalList" class="automation-signal-list"><div class="automation-empty">今日尚无条件判断记录</div></div>
-            </div>
-          </div>
-        </section>
-
-        <section id="review" class="panel review-panel page-hidden">
-          <div class="panel-header">
-            <div>
-              <div class="panel-title">复盘中心</div>
-              <div class="panel-subtitle">计划快照 · 计划vs实际 · 分腿净值 · 周/月归因(只读,不改策略)</div>
-            </div>
-            <div class="review-toolbar">
-              <input type="date" id="reviewDate" aria-label="复盘日期">
-              <div class="range-tabs">
-                <button class="range-tab active" data-review-view="day">日复盘</button>
-                <button class="range-tab" data-review-view="legs">分腿曲线</button>
-                <button class="range-tab" data-review-view="report">周/月报表</button>
-              </div>
-            </div>
-          </div>
-          <div id="reviewDayView">
-            <div id="reviewMarketPanel" class="panel" style="margin-bottom: 13px;"><div class="automation-empty">正在加载大盘环境…</div></div>
-            <div id="reviewIndustries" class="panel" style="margin-bottom: 13px;"><div class="automation-empty">正在加载板块强弱…</div></div>
-            <div id="reviewDaySummary" class="panel" style="margin-bottom: 13px;"><div class="automation-empty">正在加载当日账户摘要…</div></div>
-            <div class="panel-subtitle" style="margin: 0 0 8px;">计划快照(附)</div>
-            <div id="reviewPlanCards" class="stats-grid"></div>
-            <div class="table-wrap"><table class="automation-table">
-              <thead><tr><th>代码</th><th>名称</th><th>终态</th><th>原因/规则</th><th>强度分</th></tr></thead>
-              <tbody id="reviewCompareTable"><tr><td colspan="5" class="automation-empty">正在加载…</td></tr></tbody>
-            </table></div>
-          </div>
-          <div id="reviewLegsView" class="page-hidden">
-            <div id="reviewReconNote" class="panel-subtitle"></div>
-            <div class="backtest-chart"><svg viewBox="0 0 820 160" preserveAspectRatio="none" aria-label="分腿净值"><path id="reviewLegMachine" fill="none" stroke="#d94b4b" stroke-width="2.2" vector-effect="non-scaling-stroke"/><path id="reviewLegBear" fill="none" stroke="#e8a33d" stroke-width="2.2" vector-effect="non-scaling-stroke"/><path id="reviewLegBasket" fill="none" stroke="#3d7a5f" stroke-width="2.2" vector-effect="non-scaling-stroke"/><path id="reviewLegTotal" fill="none" stroke="#c9b8b4" stroke-width="1.2" stroke-dasharray="5 5" vector-effect="non-scaling-stroke"/></svg></div>
-            <div class="panel-subtitle"><span style="color:#d94b4b">■ 机器腿</span> <span style="color:#e8a33d">■ 熊市池腿</span> <span style="color:#3d7a5f">■ 红利篮子腿</span> <span style="color:#c9b8b4">┄ 账户合计</span></div>
-          </div>
-          <div id="reviewReportView" class="page-hidden">
-            <div class="backtest-toolbar">
-              <div class="range-tabs">
-                <button class="range-tab active" data-review-period="week">本周</button>
-                <button class="range-tab" data-review-period="month">本月</button>
-                <button class="range-tab" data-review-period="all">全期</button>
-              </div>
-            </div>
-            <div class="table-wrap"><table class="automation-table">
-              <thead><tr><th>腿</th><th>环境</th><th>回合</th><th>胜率</th><th>盈亏比</th><th>总盈亏</th><th>最大回撤</th><th>均持有(天)</th><th>中位持有(天)</th></tr></thead>
-              <tbody id="reviewAttributionTable"><tr><td colspan="9" class="automation-empty">加载中</td></tr></tbody>
-            </table></div>
-            <div class="panel-subtitle" id="reviewOpenRounds"></div>
-          </div>
-        </section>
       </div>
     </main>
   </div>
