@@ -1,0 +1,4 @@
+# 数据库配置
+database:
+  path: runtime/data/stock_selection.db
+  type: sqlite

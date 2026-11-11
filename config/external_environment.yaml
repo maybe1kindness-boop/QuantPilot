@@ -1,0 +1,9 @@
+# 外围环境调用开关
+# 实时模拟盘/实盘可以使用；历史回测默认不调用实时接口。
+enabled: true
+apply_to_realtime: true
+apply_to_backtest: false
+# 美韩科技关键数据缺失时，科技关联股不允许开仓或加仓；非科技题材不受此门禁影响。
+fail_closed: true
+# A-share session cadence for Japan/Korea data. U.S. overnight data is reused.
+intraday_refresh_minutes: 5

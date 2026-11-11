@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual Environment
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs（运行时日志统一存放于 runtime/logs）
+runtime/logs/
+logs/*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Reports
+reports/
+
+# Env files
+.env
+.env.local
+
+# QuantPilot 运行时生成内容（统一存放于 runtime/，不提交）
+# 注意：runtime/data/*.sql 为建表源码脚本，需保留在 git，故不在此忽略
+runtime/data/*.db
+runtime/data/*.db-shm
+runtime/data/*.db-wal
+runtime/data/*.json
+runtime/data/cache/
+runtime/data/akshare_cache/
+runtime/data/risk_cache/
+runtime/data/hmm_model/
+runtime/data/running/
+runtime/data/backtest_batch/
+runtime/data/backups/
+runtime/data/pushplus_token
+runtime/data/*.log
+runtime/data/*.sqlite3
+runtime/data/*.bak_*
+runtime/data/external_environment/
+runtime/data/morning_alert/
+runtime/data/trading_alerts/
+
+# 回测数据（体积过大，仅提交回测代码脚本）
+backtest_2y/bs_5min/
+backtest_2y/*.tar.gz
+
+# 本地模拟盘运行数据(复盘产物,不入库)
+runtime/data/paper_trading/
+
+# 本地实际运行配置不入库,使用前请复制 config.yaml.template 并填写
+config/config.yaml
