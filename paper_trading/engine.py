@@ -6,6 +6,7 @@
 """
 from __future__ import annotations
 
+import csv
 import json
 import logging
 import re
@@ -119,6 +120,8 @@ class PaperTradingEngine:
         if max_stocks and max_stocks > 0:
             codes = codes[:max_stocks]
         as_of = self._screen_as_of_date(history_window)
+        if as_of is None:
+            as_of = pd.Timestamp(self._screen_required_completed_date())
         import_stats = (
             self._ensure_historical_screen_data(codes, as_of, required_bars=2)
             if as_of is not None else {}
